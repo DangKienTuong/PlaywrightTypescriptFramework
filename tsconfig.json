@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noEmitOnError": true,
+    "noEmit": true,
+    "target": "ES2022",
+    "strict": true,
+    "resolveJsonModule": true,
+    "strictNullChecks": true,
+    "importHelpers": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "baseUrl": ".", // Root directory for resolving paths
+    "paths": {
+      "@pageobjects/*": [
+        "tests/test-objects/gui/pageObjects/*"
+      ],
+      "@testdata/*": [
+        "tests/tests-management/test-data/*"
+      ],
+      "@apiobjects/*": [
+        "tests/test-object/api/*"
+      ],
+      "@utilities/*": [
+        "src/utilities/*"
+      ],
+      "@apitest/*": [
+        "tests/tests-management/api/*"
+      ],
+      "@guiest/*": [
+        "tests/tests-management/gui/*"
+      ]
+    },
+    "declaration": false, // No need to generate declaration files (.d.ts) for a test project
+    "downlevelIteration": true, // Enables support for iterating on objects like `Map` and `Set` in older environments
+    "noImplicitOverride": true, // Ensures that overriding methods in a subclass are marked with the 'override' keyword
+    "noImplicitReturns": true, // Ensures that all code paths in a function explicitly return a value
+    "typeRoots": [
+      "node_modules/@types",
+      "./types",
+      "./src/types"
+    ] // Specifies the location of type declaration files
+  },
+  "include": [
+    "src/**/*",
+    "tests/**/*",
+    "playwright.config.ts",
+    "docs/assets/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "test-results",
+    "dist",
+    ".auth"
+  ]
+}

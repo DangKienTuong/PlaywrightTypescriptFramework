@@ -1,0 +1,59 @@
+{
+  "name": "playwright_automated_tests",
+  "version": "1.0.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "description": "Automated test framework using Playwright, which is designed for Web, API and Electron Apps. Stable and Robust layer on top of Playwright with inbuilt Utilities, Linting, Logger, Reports and much more",
+  "keywords": [
+    "playwright",
+    "typescript",
+    "testing",
+    "automationtest"
+  ],
+  "dependencies": {
+    "@playwright/test": "^1.51.0",
+    "@types/node": "^22.13.10",
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "exceljs": "^4.4.0",
+    "fast-xml-parser": "^5.1.0",
+    "https-proxy-agent": "^7.0.6",
+    "mammoth": "^1.9.0",
+    "monocart-reporter": "^2.9.16",
+    "tsconfig-paths": "^4.2.0",
+    "tslib": "^2.8.1",
+    "winston": "^3.17.0"
+  },
+  "scripts": {
+    "postinstall": "npx playwright install",
+    "test": "echo %NODE_ENV% && npx playwright test",
+    "test:debug": "echo %NODE_ENV% && npx playwright test --headed  --project=firefox --grep=@debug",
+    "test:chromium": "echo %NODE_ENV% && npx playwright test --project=chromium",
+    "test:chromium-headed": "echo %NODE_ENV% && npx playwright test --headed --project=chromium",
+    "test:firefox": "echo %NODE_ENV% && npx playwright test --project=firefox",
+    "test:firefox-headed": "echo %NODE_ENV% && npx playwright test --headed --project=firefox",
+    "test:msedge": "echo %NODE_ENV% && npx playwright test --project=msedge",
+    "test:msedge-headed": "echo %NODE_ENV% && npx playwright test --headed --project=msedge",
+    "test:browser": "echo %NODE_ENV% && npx playwright test --project ",
+    "test:browser-headed": "echo %NODE_ENV% && npx playwright test --headed --project ",
+    "test:dev": "cross-env NODE_ENV='dev' npm run test",
+    "test:staging": "cross-env NODE_ENV='staging' npm run test",
+    "test:sit": "cross-env NODE_ENV='sit' npm run test",
+    "test:prod": "cross-env NODE_ENV='prod' npm run test",
+    "test:api": "echo %NODE_ENV% && npx playwright test --project=apitests --grep=@api-debug",
+    "lint": "npx eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "eslint": "^9.23.0",
+    "eslint-plugin-playwright": "^2.2.0",
+    "globals": "^16.0.0",
+    "httpntlm": "^1.8.13",
+    "jiti": "^2.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.28.0"
+  }
+}
