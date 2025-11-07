@@ -62,12 +62,7 @@ export default defineConfig({
       args: ["--start-maximized"]
     },
     ignoreHTTPSErrors: true,
-    acceptDownloads: true,
-    proxy: {
-      server: 'http://rb-proxy-de.bosch.com:8080',
-      username: 'DTG4HC',
-      password: ''
-    },
+    acceptDownloads: true
   },
   projects: PLAYWRIGHT_PROJECT_CONFIG
 });
